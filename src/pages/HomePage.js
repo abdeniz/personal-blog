@@ -33,9 +33,12 @@ const Homepage = () => {
     <>
       <HomeHeader />
       <ArticlesSection>
-        {data.articles.map((article) => (
-          <ArticleCard key={article.id} article={article} />
-        ))}
+        {data &&
+          data.articles
+            .map((article) => (
+              <ArticleCard key={article.id} article={article} />
+            ))
+            .reverse()}
       </ArticlesSection>
     </>
   )

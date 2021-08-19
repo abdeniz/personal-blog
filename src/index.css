@@ -157,7 +157,7 @@ h1 {
   font-size: 24px;
   font-weight: 600;
   letter-spacing: -0.6px;
-  line-height: 150%;
+  line-height: 125%;
 }
 
 h2 {
@@ -165,6 +165,7 @@ h2 {
   font-weight: 300;
   letter-spacing: -0.6px;
   color: #aaaaaa;
+  margin-bottom: 8px;
 }
 
 h3 {
