@@ -16,14 +16,16 @@ const ArticleCard = ({
 
       <p>{excerpt}</p>
       <h3>
-        {createdAt} ｜{' '}
-        {categories.map((category) => {
-          return (
-            <Link to={'/categories/' + category.name}>
-              {category.name + ' '}
-            </Link>
-          )
-        })}
+        {createdAt}
+        {categories &&
+          categories.map((category) => {
+            return (
+              <Link to={'/categories/' + category.name}>
+                {' '}
+                ｜ {category.name}
+              </Link>
+            )
+          })}
       </h3>
     </ArticleCardWrapper>
   )
