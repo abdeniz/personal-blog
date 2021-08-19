@@ -5,7 +5,7 @@ import loading from '../img/loading.gif'
 const Loading = () => {
   return (
     <LoadingWrapper>
-      <img src={loading} />
+      <img src={loading} alt='Loading...' />
     </LoadingWrapper>
   )
 }
