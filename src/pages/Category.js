@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { useParams } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import CategoryHeader from '../components/CategoryHeader'
@@ -35,7 +35,7 @@ const Category = () => {
   if (error) return <Error />
 
   return (
-    <section>
+    <Fragment>
       <CategoryHeader categoryName={data.category.name} />
       <CategoryWrapper>
         {data &&
@@ -43,12 +43,10 @@ const Category = () => {
             return <ArticleCard article={article}></ArticleCard>
           })}
       </CategoryWrapper>
-    </section>
+    </Fragment>
   )
 }
 
-const CategoryWrapper = styled.div`
-  margin: 50px auto;
-`
+const CategoryWrapper = styled.section``
 
 export default Category
