@@ -4,7 +4,7 @@ import format from 'date-fns/format'
 import { parseISO } from 'date-fns'
 import styled from 'styled-components'
 
-const Header = ({ article: { title, created_at } }) => {
+const Header = ({ article: { title, created_at, categories } }) => {
   const createdAt = format(parseISO(created_at), 'MMMM do, yyyy')
 
   return (
@@ -12,7 +12,16 @@ const Header = ({ article: { title, created_at } }) => {
       <HeaderWrapper>
         <div>
           <h1>{title}</h1>
-          <h3>{createdAt}</h3>
+          <h3>
+            {createdAt} ｜{' '}
+            {categories.map((category) => {
+              return (
+                <Link to={'/categories/' + category.name}>
+                  {category.name + ' '}
+                </Link>
+              )
+            })}
+          </h3>
         </div>
         <Link to='/'>
           <p>{'< Back to homepage'}</p>

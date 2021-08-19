@@ -10,6 +10,9 @@ const ARTICLE = gql`
       title
       body
       created_at
+      categories {
+        name
+      }
     }
   }
 `

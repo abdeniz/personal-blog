@@ -12,6 +12,9 @@ const ARTICLES = gql`
       excerpt
       body
       created_at
+      categories {
+        name
+      }
     }
   }
 `
