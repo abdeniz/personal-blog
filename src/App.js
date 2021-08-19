@@ -5,7 +5,7 @@ import Homepage from './pages/HomePage'
 import Article from './pages/Article'
 
 const client = new ApolloClient({
-  uri: 'http://localhost:1337/graphql',
+  uri: `${process.env.REACT_APP_BACKEND_URL}/graphql`,
   cache: new InMemoryCache(),
 })
 
