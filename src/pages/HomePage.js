@@ -14,6 +14,7 @@ const ARTICLES = gql`
       created_at
       categories {
         name
+        id
       }
     }
   }

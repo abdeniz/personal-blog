@@ -8,6 +8,7 @@ const ArticleCard = ({
   article: { id, title, excerpt, created_at, categories },
 }) => {
   const createdAt = format(parseISO(created_at), 'MMMM do, yyyy')
+  console.log(categories)
   return (
     <ArticleCardWrapper>
       <Link to={`/articles/${id}`}>
@@ -20,10 +21,7 @@ const ArticleCard = ({
         {categories &&
           categories.map((category) => {
             return (
-              <Link to={'/categories/' + category.name}>
-                {' '}
-                ｜ {category.name}
-              </Link>
+              <Link to={'/categories/' + category.id}> ｜ {category.name}</Link>
             )
           })}
       </h3>

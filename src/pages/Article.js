@@ -13,6 +13,7 @@ const ARTICLE = gql`
       created_at
       categories {
         name
+        id
       }
     }
   }

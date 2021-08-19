@@ -16,7 +16,7 @@ const Header = ({ article: { title, created_at, categories } }) => {
           {categories &&
             categories.map((category) => {
               return (
-                <Link to={'/categories/' + category.name}>
+                <Link to={'/categories/' + category.id}>
                   {' '}
                   ｜ {category.name}
                 </Link>
