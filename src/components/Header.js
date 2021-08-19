@@ -13,14 +13,16 @@ const Header = ({ article: { title, created_at, categories } }) => {
         <div>
           <h1>{title}</h1>
           <h3>
-            {createdAt} ｜{' '}
-            {categories.map((category) => {
-              return (
-                <Link to={'/categories/' + category.name}>
-                  {category.name + ' '}
-                </Link>
-              )
-            })}
+            {createdAt}
+            {categories &&
+              categories.map((category) => {
+                return (
+                  <Link to={'/categories/' + category.name}>
+                    {' '}
+                    ｜ {category.name}
+                  </Link>
+                )
+              })}
           </h3>
         </div>
         <Link to='/'>
