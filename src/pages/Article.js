@@ -5,6 +5,7 @@ import { useQuery, gql } from '@apollo/client'
 import ReactMarkdown from 'react-markdown'
 import { Link } from 'react-router-dom'
 import Loading from '../components/Loading'
+import Error from '../components/Error'
 
 const ARTICLE = gql`
   query GetArticle($id: ID!) {
@@ -29,7 +30,7 @@ const Article = () => {
 
   if (loading) return <Loading />
 
-  if (error) return <p>ERROR!</p>
+  if (error) return <Error />
 
   return (
     <Fragment>

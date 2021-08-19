@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import ArticleCard from '../components/ArticleCard'
 import { useQuery, gql } from '@apollo/client'
 import Loading from '../components/Loading'
+import Error from '../components/Error'
 
 const ARTICLES = gql`
   query GetArticles {
@@ -26,7 +27,7 @@ const Homepage = () => {
 
   if (loading) return <Loading />
 
-  if (error) return <p>ERROR!</p>
+  if (error) return <Error />
 
   return (
     <>

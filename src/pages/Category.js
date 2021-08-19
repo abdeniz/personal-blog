@@ -5,6 +5,7 @@ import CategoryHeader from '../components/CategoryHeader'
 import styled from 'styled-components'
 import ArticleCard from '../components/ArticleCard'
 import Loading from '../components/Loading'
+import Error from '../components/Error'
 
 const CATEGORY_ARTICLES = gql`
   query GetCategory($id: ID!) {
@@ -31,7 +32,7 @@ const Category = () => {
 
   if (loading) return <Loading />
 
-  if (error) return <p>ERROR!</p>
+  if (error) return <Error />
 
   return (
     <section>
