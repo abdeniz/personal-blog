@@ -52,6 +52,10 @@ const SocialIcon = styled.img`
   &:hover {
     transform: translateY(-2px);
   }
+
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
 `
 
 export default HomeHeader

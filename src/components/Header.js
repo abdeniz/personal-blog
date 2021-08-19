@@ -10,24 +10,19 @@ const Header = ({ article: { title, created_at, categories } }) => {
   return (
     <section>
       <HeaderWrapper>
-        <div>
-          <h1>{title}</h1>
-          <h3>
-            {createdAt}
-            {categories &&
-              categories.map((category) => {
-                return (
-                  <Link to={'/categories/' + category.name}>
-                    {' '}
-                    ｜ {category.name}
-                  </Link>
-                )
-              })}
-          </h3>
-        </div>
-        <Link to='/'>
-          <p>{'< Back to homepage'}</p>
-        </Link>
+        <h1>{title}</h1>
+        <h3>
+          {createdAt}
+          {categories &&
+            categories.map((category) => {
+              return (
+                <Link to={'/categories/' + category.name}>
+                  {' '}
+                  ｜ {category.name}
+                </Link>
+              )
+            })}
+        </h3>
       </HeaderWrapper>
     </section>
   )
@@ -38,7 +33,10 @@ const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 `
 
 export default Header

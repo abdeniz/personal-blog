@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Header from '../components/Header'
 import { useParams } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import ReactMarkdown from 'react-markdown'
+import { Link } from 'react-router-dom'
 
 const ARTICLE = gql`
   query GetArticle($id: ID!) {
@@ -29,12 +30,14 @@ const Article = () => {
   if (error) return <p>ERROR!</p>
 
   return (
-    <>
+    <Fragment>
       <Header article={data.article} />
       <section>
         <ReactMarkdown>{data.article.body}</ReactMarkdown>
+        <br />
+        <Link to='/'>{'< Back to homepage'}</Link>
       </section>
-    </>
+    </Fragment>
   )
 }
 
