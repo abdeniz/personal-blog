@@ -3,6 +3,7 @@ import HomeHeader from '../components/HomeHeader'
 import styled from 'styled-components'
 import ArticleCard from '../components/ArticleCard'
 import { useQuery, gql } from '@apollo/client'
+import Loading from '../components/Loading'
 
 const ARTICLES = gql`
   query GetArticles {
@@ -23,7 +24,7 @@ const ARTICLES = gql`
 const Homepage = () => {
   const { loading, error, data } = useQuery(ARTICLES)
 
-  if (loading) return <p>Loading...</p>
+  if (loading) return <Loading />
 
   if (error) return <p>ERROR!</p>
 

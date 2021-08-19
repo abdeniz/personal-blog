@@ -4,6 +4,7 @@ import { useQuery, gql } from '@apollo/client'
 import CategoryHeader from '../components/CategoryHeader'
 import styled from 'styled-components'
 import ArticleCard from '../components/ArticleCard'
+import Loading from '../components/Loading'
 
 const CATEGORY_ARTICLES = gql`
   query GetCategory($id: ID!) {
@@ -28,7 +29,7 @@ const Category = () => {
     variables: { id: id },
   })
 
-  if (loading) return <p>Loading...</p>
+  if (loading) return <Loading />
 
   if (error) return <p>ERROR!</p>
 

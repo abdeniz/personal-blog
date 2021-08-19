@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import ReactMarkdown from 'react-markdown'
 import { Link } from 'react-router-dom'
+import Loading from '../components/Loading'
 
 const ARTICLE = gql`
   query GetArticle($id: ID!) {
@@ -26,7 +27,7 @@ const Article = () => {
     variables: { id: id },
   })
 
-  if (loading) return <p>Loading...</p>
+  if (loading) return <Loading />
 
   if (error) return <p>ERROR!</p>
 
