@@ -10,7 +10,7 @@ const HomeHeader = () => {
       <HomeHeaderContent>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <PortraitImg src={portrait} alt='me' />
-          <div style={{ marginLeft: '8px' }}>
+          <div style={{ marginLeft: '12px' }}>
             <h2>Personal dev blog by</h2>
             <h1>Deniz Abdurrahmani</h1>
           </div>
