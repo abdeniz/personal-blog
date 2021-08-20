@@ -11,7 +11,6 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { duotoneSpace } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import clipboard from '../img/clipboard.svg'
 import CopyButton from '../components/CopyButton'
-import { useState } from 'react'
 
 const ARTICLE = gql`
   query GetArticle($id: ID!) {
