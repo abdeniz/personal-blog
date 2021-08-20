@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { ReactComponent as ClipboardIcon } from '../img/clipboard.svg'
 
 const CopyButton = (props) => {
   return (
@@ -8,7 +9,7 @@ const CopyButton = (props) => {
         navigator.clipboard.writeText(props.text)
       }}
     >
-      <IconButtonImg src={props.img} alt={props.alt} />
+      <StyledClipboardIcon />
     </CopyButtonWrapper>
   )
 }
@@ -20,7 +21,6 @@ const CopyButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fafafa;
   border-radius: 4px;
   width: 35px;
   height: 35px;
@@ -29,14 +29,16 @@ const CopyButtonWrapper = styled.div`
 
   transition: background-color 0.2s;
 
-  &:hover {
-    background-color: #e8e8e8;
+  & svg > path {
+    fill: #fe8c52;
+    transition: fill 0.2s;
+  }
+
+  &:hover > svg > path {
+    fill: #fafafa;
   }
 `
 
-const IconButtonImg = styled.img`
-  transition: transform 0.2s;
-  width: 20px;
-`
+const StyledClipboardIcon = styled(ClipboardIcon)``
 
 export default CopyButton
