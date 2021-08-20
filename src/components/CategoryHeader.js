@@ -12,7 +12,7 @@ const CategoryHeader = ({ categoryName }) => {
 }
 
 const CategoryHeaderContent = styled.div`
-  margin: 50px auto;
+  margin: 24px auto;
 `
 
 const CategoryHeaderWrapper = styled.section`

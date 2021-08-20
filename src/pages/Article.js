@@ -3,9 +3,10 @@ import Header from '../components/Header'
 import { useParams } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import ReactMarkdown from 'react-markdown'
-import { Link } from 'react-router-dom'
 import Loading from '../components/Loading'
 import Error from '../components/Error'
+import styled from 'styled-components'
+import Button from '../components/Button'
 
 const ARTICLE = gql`
   query GetArticle($id: ID!) {
@@ -36,12 +37,29 @@ const Article = () => {
     <Fragment>
       <Header article={data.article} />
       <section>
-        <ReactMarkdown>{data.article.body}</ReactMarkdown>
-        <br />
-        <Link to='/'>{'< Back to homepage'}</Link>
+        <ArticleContent>
+          <Body>
+            <BodyMarkdown>{data.article.body}</BodyMarkdown>
+          </Body>
+          <Button uri='/'>Back to homepage</Button>
+        </ArticleContent>
       </section>
     </Fragment>
   )
 }
+
+const ArticleContent = styled.div`
+  margin: 50px auto;
+`
+
+const Body = styled.div`
+  margin: 50px 0;
+`
+
+const BodyMarkdown = styled(ReactMarkdown)`
+  & p {
+    margin: 24px 0;
+  }
+`
 
 export default Article

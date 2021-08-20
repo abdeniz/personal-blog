@@ -2,10 +2,10 @@ import React, { Fragment } from 'react'
 import { useParams } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import CategoryHeader from '../components/CategoryHeader'
-import styled from 'styled-components'
 import ArticleCard from '../components/ArticleCard'
 import Loading from '../components/Loading'
 import Error from '../components/Error'
+import Button from '../components/Button'
 
 const CATEGORY_ARTICLES = gql`
   query GetCategory($id: ID!) {
@@ -37,18 +37,17 @@ const Category = () => {
   return (
     <Fragment>
       <CategoryHeader categoryName={data.category.name} />
-      <CategoryWrapper>
+      <section>
         {data &&
           data.category.articles.map((article) => {
             return (
               <ArticleCard key={article.id} article={article}></ArticleCard>
             )
           })}
-      </CategoryWrapper>
+        <Button uri='/'>Back to homepage</Button>
+      </section>
     </Fragment>
   )
 }
-
-const CategoryWrapper = styled.section``
 
 export default Category

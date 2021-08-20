@@ -9,21 +9,23 @@ const Header = ({ article: { title, created_at, categories } }) => {
 
   return (
     <section>
-      <HeaderContent>
-        <h1>{title}</h1>
-        <h3>
-          {createdAt}
-          {categories &&
-            categories.map((category) => {
-              return (
-                <Link to={'/categories/' + category.id}>
-                  {' '}
-                  ｜ {category.name}
-                </Link>
-              )
-            })}
-        </h3>
-      </HeaderContent>
+      <HeaderWrapper>
+        <HeaderContent>
+          <h1>{title}</h1>
+          <h3>
+            {createdAt}
+            {categories &&
+              categories.map((category) => {
+                return (
+                  <Link to={'/categories/' + category.id}>
+                    {' '}
+                    ｜ {category.name}
+                  </Link>
+                )
+              })}
+          </h3>
+        </HeaderContent>
+      </HeaderWrapper>
     </section>
   )
 }
@@ -33,13 +35,15 @@ const HeaderWrapper = styled.div`
 `
 
 const HeaderContent = styled.div`
-  margin: 50px auto;
+  margin: 24px auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 750px) {
     flex-direction: column;
+    align-items: flex-start;
   }
 `
 

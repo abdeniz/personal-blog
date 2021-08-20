@@ -10,9 +10,9 @@ const HomeHeader = () => {
       <HomeHeaderContent>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <PortraitImg src={portrait} alt='me' />
-          <div style={{ marginLeft: '12px' }}>
+          <div>
             <h2>Personal dev blog by</h2>
-            <h1>Deniz Abdurrahmani</h1>
+            <Logo>Deniz Abdurrahmani</Logo>
           </div>
         </div>
         <div>
@@ -42,6 +42,11 @@ const HomeHeaderContent = styled.div`
 const PortraitImg = styled.img`
   border-radius: 50%;
   width: 75px;
+  margin-right: 16px;
+`
+
+const Logo = styled.h1`
+  line-height: 100%;
 `
 
 const SocialIcon = styled.img`
@@ -53,7 +58,7 @@ const SocialIcon = styled.img`
     transform: translateY(-2px);
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 750px) {
     display: none;
   }
 `

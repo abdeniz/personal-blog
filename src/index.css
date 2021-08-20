@@ -147,7 +147,7 @@ section {
   margin: 0 auto;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 750px) {
   section {
     margin: 24px;
   }
@@ -157,7 +157,7 @@ h1 {
   font-size: 24px;
   font-weight: 600;
   letter-spacing: -0.6px;
-  line-height: 125%;
+  line-height: 175%;
 }
 
 h2 {
@@ -174,7 +174,7 @@ h3 {
   letter-spacing: 1.6px;
   color: #aaaaaa;
   text-transform: uppercase;
-  line-height: 125%;
+  line-height: 150%;
 }
 
 p {
