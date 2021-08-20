@@ -7,6 +7,8 @@ import Loading from '../components/Loading'
 import Error from '../components/Error'
 import styled from 'styled-components'
 import Button from '../components/Button'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { duotoneSpace } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 const ARTICLE = gql`
   query GetArticle($id: ID!) {
@@ -39,7 +41,28 @@ const Article = () => {
       <section>
         <ArticleContent>
           <Body>
-            <BodyMarkdown>{data.article.body}</BodyMarkdown>
+            <BodyMarkdown
+              children={data.article.body}
+              components={{
+                code({ node, inline, className, children, ...props }) {
+                  const match = /language-(\w+)/.exec(className || '')
+                  return !inline && match ? (
+                    <CustomSyntaxHighlighter
+                      children={String(children).replace(/\n$/, '')}
+                      style={duotoneSpace}
+                      language={match[1]}
+                      PreTag='pre'
+                      customStyle={{ background: '#111318;' }}
+                      {...props}
+                    />
+                  ) : (
+                    <code className={className} {...props}>
+                      {children}
+                    </code>
+                  )
+                },
+              }}
+            />
           </Body>
           <Button uri='/'>Back to homepage</Button>
         </ArticleContent>
@@ -47,6 +70,12 @@ const Article = () => {
     </Fragment>
   )
 }
+
+const CustomSyntaxHighlighter = styled(SyntaxHighlighter)`
+  & * {
+    background: #111318;
+  }
+`
 
 const ArticleContent = styled.div`
   margin: 50px auto;

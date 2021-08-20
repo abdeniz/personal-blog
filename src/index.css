@@ -186,13 +186,9 @@ code {
 }
 
 pre {
-  margin: 24px 0;
-  padding: 16px 16px 16px 24px;
-  background-color: #111318;
+  background: #111318;
   border-radius: 4px;
-  line-height: 150%;
-  word-spacing: 4px;
-  overflow: auto;
+  margin: 24px 0;
 }
 
 :not(pre) > code {
