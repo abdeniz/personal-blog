@@ -9,7 +9,7 @@ const Header = ({ article: { title, created_at, categories } }) => {
 
   return (
     <section>
-      <HeaderWrapper>
+      <HeaderContent>
         <h1>{title}</h1>
         <h3>
           {createdAt}
@@ -23,12 +23,16 @@ const Header = ({ article: { title, created_at, categories } }) => {
               )
             })}
         </h3>
-      </HeaderWrapper>
+      </HeaderContent>
     </section>
   )
 }
 
 const HeaderWrapper = styled.div`
+  border-bottom: solid 1px #e8e8e8;
+`
+
+const HeaderContent = styled.div`
   margin: 50px auto;
   display: flex;
   flex-direction: row;
