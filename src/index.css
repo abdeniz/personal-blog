@@ -178,5 +178,24 @@ h3 {
 }
 
 p {
-  line-height: 125%;
+  line-height: 150%;
+}
+
+code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+pre {
+  margin: 24px 0;
+  padding: 16px 16px 16px 24px;
+  background-color: #111318;
+  border-radius: 4px;
+  line-height: 150%;
+  word-spacing: 4px;
+}
+
+:not(pre) > code {
+  background-color: #111318;
+  padding: 2px 4px;
+  border-radius: 4px;
 }
