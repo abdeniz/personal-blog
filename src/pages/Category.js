@@ -40,7 +40,9 @@ const Category = () => {
       <CategoryWrapper>
         {data &&
           data.category.articles.map((article) => {
-            return <ArticleCard article={article}></ArticleCard>
+            return (
+              <ArticleCard key={article.id} article={article}></ArticleCard>
+            )
           })}
       </CategoryWrapper>
     </Fragment>

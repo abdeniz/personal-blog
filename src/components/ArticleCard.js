@@ -5,10 +5,10 @@ import { parseISO } from 'date-fns'
 import { Link } from 'react-router-dom'
 
 const ArticleCard = ({
-  article: { id, title, excerpt, created_at, categories },
+  article: { id, title, created_at, excerpt, categories },
 }) => {
   const createdAt = format(parseISO(created_at), 'MMMM do, yyyy')
-  console.log(categories)
+
   return (
     <ArticleCardWrapper>
       <Link to={`/articles/${id}`}>
