@@ -195,6 +195,12 @@ pre {
   padding: 8px 8px 8px 16px;
 }
 
+@media only screen and (max-width: 750px) {
+  pre {
+    padding: 4px 4px 4px 8px;
+  }
+}
+
 :not(pre) > code {
   background-color: #111318;
   padding: 2px 4px;
