@@ -15,14 +15,14 @@ const HomeHeader = () => {
             <Logo>Deniz Abdurrahmani</Logo>
           </div>
         </div>
-        <div>
+        <SocialIconWrapper>
           <a href='https://github.com/abdeniz'>
             <SocialIcon src={github} alt='github' />
           </a>
           <a href='https://www.linkedin.com/in/denizabdurrahmani/'>
             <SocialIcon src={linkedin} alt='linkedin' />
           </a>
-        </div>
+        </SocialIconWrapper>
       </HomeHeaderContent>
     </HomeHeaderWrapper>
   )
@@ -43,10 +43,22 @@ const PortraitImg = styled.img`
   border-radius: 50%;
   width: 75px;
   margin-right: 16px;
+
+  @media only screen and (max-width: 750px) {
+    display: none;
+  }
 `
 
 const Logo = styled.h1`
   line-height: 100%;
+`
+
+const SocialIconWrapper = styled.div`
+  display: flex;
+
+  @media only screen and (max-width: 750px) {
+    flex-direction: column;
+  }
 `
 
 const SocialIcon = styled.img`
@@ -59,7 +71,8 @@ const SocialIcon = styled.img`
   }
 
   @media only screen and (max-width: 750px) {
-    display: none;
+    margin-left: 0;
+    margin-bottom: 8px;
   }
 `
 
