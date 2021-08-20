@@ -11,7 +11,7 @@ const Header = ({ article: { title, created_at, categories } }) => {
     <section>
       <HeaderWrapper>
         <HeaderContent>
-          <h1>{title}</h1>
+          <h1 style={{ marginBottom: '8px' }}>{title}</h1>
           <h3>
             {createdAt}
             {categories &&

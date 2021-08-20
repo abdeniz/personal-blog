@@ -17,6 +17,7 @@ const ButtonWrapper = styled.div`
   padding: 16px 24px;
   display: inline-block;
   border-radius: 4px;
+  text-align: center;
 
   & h3 {
     transition: color 0.2s;
@@ -24,6 +25,10 @@ const ButtonWrapper = styled.div`
 
   &:hover h3 {
     color: #fafafa;
+  }
+
+  @media only screen and (max-width: 750px) {
+    display: block;
   }
 `
 

@@ -12,7 +12,7 @@ const ArticleCard = ({
   return (
     <ArticleCardWrapper>
       <Link to={`/articles/${id}`}>
-        <h1>{title}</h1>
+        <h1 style={{ marginBottom: '8px' }}>{title}</h1>
       </Link>
 
       <p>{excerpt}</p>
