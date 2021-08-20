@@ -37,6 +37,10 @@ const HomeHeaderContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media only screen and (max-width: 750px) {
+    margin: 24px 0;
+  }
 `
 
 const PortraitImg = styled.img`
