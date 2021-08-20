@@ -192,6 +192,7 @@ pre {
   border-radius: 4px;
   line-height: 150%;
   word-spacing: 4px;
+  overflow: auto;
 }
 
 :not(pre) > code {
