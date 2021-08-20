@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as HashRouter, Route, Switch } from 'react-router-dom'
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 
 import Homepage from './pages/HomePage'
@@ -12,7 +12,7 @@ const client = new ApolloClient({
 
 const App = () => {
   return (
-    <Router>
+    <HashRouter>
       <ApolloProvider client={client}>
         <div className='App'>
           <Switch>
@@ -28,7 +28,7 @@ const App = () => {
           </Switch>
         </div>
       </ApolloProvider>
-    </Router>
+    </HashRouter>
   )
 }
 
