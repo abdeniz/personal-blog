@@ -9,6 +9,9 @@ import styled from 'styled-components'
 import Button from '../components/Button'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { duotoneSpace } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import clipboard from '../img/clipboard.svg'
+import CopyButton from '../components/CopyButton'
+import { useState } from 'react'
 
 const ARTICLE = gql`
   query GetArticle($id: ID!) {
@@ -37,7 +40,7 @@ const Article = () => {
 
   return (
     <Fragment>
-      <Header article={data.article} />
+      <Header key={id} article={data.article} />
       <section>
         <ArticleContent>
           <Body>
@@ -47,14 +50,23 @@ const Article = () => {
                 code({ node, inline, className, children, ...props }) {
                   const match = /language-(\w+)/.exec(className || '')
                   return !inline && match ? (
-                    <CustomSyntaxHighlighter
-                      children={String(children).replace(/\n$/, '')}
-                      style={duotoneSpace}
-                      language={match[1]}
-                      PreTag='pre'
-                      customStyle={{ background: '#111318;' }}
-                      {...props}
-                    />
+                    <>
+                      <CopyButton
+                        img={clipboard}
+                        alt='clipboard'
+                        text={children}
+                      />
+
+                      <CustomSyntaxHighlighter
+                        children={String(children).replace(/\n$/, '')}
+                        style={duotoneSpace}
+                        language={match[1]}
+                        PreTag='pre'
+                        customStyle={{ background: '#111318' }}
+                        wrapLines
+                        {...props}
+                      />
+                    </>
                   ) : (
                     <code className={className} {...props}>
                       {children}
@@ -72,8 +84,11 @@ const Article = () => {
 }
 
 const CustomSyntaxHighlighter = styled(SyntaxHighlighter)`
+  background: none;
+
   & * {
     background: #111318;
+    font-family: 'JetBrains Mono', monospace;
   }
 `
 
