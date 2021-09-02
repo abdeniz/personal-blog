@@ -35,10 +35,20 @@ const Header = () => {
 }
 
 const HeaderWrapper = styled.div`
+  max-width: 1000px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 32px 0 64px 0;
+
+  @media only screen and (max-width: 1100px) {
+    padding: 32px 64px;
+  }
+
+  @media only screen and (max-width: 720px) {
+    padding: 32px;
+  }
 `
 
 const LeftWrapper = styled.div`

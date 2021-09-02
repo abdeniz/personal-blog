@@ -22,16 +22,26 @@ const tempPosts: IPostListItem[] = [
 
 const PostList = () => {
   return (
-    <div>
+    <PostListWrapper>
       <h2>Recently published</h2>
       <div>
         {tempPosts.map(({ title, excerpt }, index) => (
           <PostListItemStyled key={index} title={title} excerpt={excerpt} />
         ))}
       </div>
-    </div>
+    </PostListWrapper>
   )
 }
+
+const PostListWrapper = styled.div`
+  @media only screen and (max-width: 1100px) {
+    padding: 32px 64px;
+  }
+
+  @media only screen and (max-width: 720px) {
+    padding: 32px;
+  }
+`
 
 const PostListItemStyled = styled(PostListItem)`
   margin: 32px 0;

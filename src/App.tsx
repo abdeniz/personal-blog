@@ -7,7 +7,7 @@ import { createGlobalStyle } from 'styled-components'
 import './css/App.css'
 import PostList from './components/PostList'
 import Main from './components/Main'
-import LeftColumn from './components/Layout/LeftColumn'
+import ProjectList from './components/ProjectList'
 
 const App = () => {
   const [darkTheme, setDarkTheme] = useState(true)
@@ -20,13 +20,12 @@ const App = () => {
   return (
     <ThemeContext.Provider value={themeValue}>
       {darkTheme ? <DarkTheme /> : <LightTheme />}
+
+      <Header />
       <Main>
         <Fragment>
-          <Header />
-          <LeftColumn>
-            <PostList />
-          </LeftColumn>
-          {/* <ProjectList /> */}
+          <PostList />
+          <ProjectList />
         </Fragment>
       </Main>
     </ThemeContext.Provider>
@@ -37,6 +36,8 @@ const LightTheme = createGlobalStyle`
   :root {
     --color-paragraph: #23436A;
     --color-background: #fafeff;
+    --color-tag-background: #3591ff;
+    --color-tag-text: #fafeff;
   }
 
   .icon-color {
@@ -48,6 +49,8 @@ const DarkTheme = createGlobalStyle`
   :root {
     --color-paragraph: #fafeff;
     --color-background: #0D1B2C;
+    --color-tag-background: #23436A;
+    --color-tag-text: #3591ff;
   }
 
   .icon-color {
