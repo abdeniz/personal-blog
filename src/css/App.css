@@ -1,0 +1,42 @@
+:root {
+  --color-primary: #3591ff;
+  --color-secondary: #ff4473;
+}
+
+* {
+  transition: color 0.4s;
+  transition: background-color 0.3s;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-paragraph);
+  font-family: 'Poppins', sans-serif;
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  color: var(--color-primary);
+}
+
+h2 {
+  font-weight: 500;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+p {
+  line-height: 24px;
+  font-weight: 400;
+}

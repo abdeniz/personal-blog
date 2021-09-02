@@ -10,8 +10,8 @@ const Main = ({ children }: IMain) => {
 }
 
 const MainWrapper = styled.div`
-  width: 1000px;
-  margin: 32px auto;
+  max-width: 1000px;
+  margin: 0 auto;
 `
 
 export default Main
