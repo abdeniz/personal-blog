@@ -1,1 +1,1 @@
-#A frontend repo for my blog
+# A frontend repo for my blog
