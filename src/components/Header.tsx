@@ -7,6 +7,7 @@ import sun from '../img/sun.svg'
 import { useContext } from 'react'
 import ThemeContext from './ThemeContext'
 import Chevron from './icons/Chevron'
+import Burger from './icons/Burger'
 
 const Header = () => {
   const { setDarkTheme, darkTheme } = useContext(ThemeContext)
@@ -26,6 +27,7 @@ const Header = () => {
             </li>
           </ul>
         </Nav>
+        <BurgerStyled fill={'var(--color-paragraph)'} />
         <ThemeToggle onClick={() => setDarkTheme(!darkTheme)}>
           <img alt='theme_toggle' src={darkTheme ? moon : sun} />
         </ThemeToggle>
@@ -68,6 +70,10 @@ const Logo = styled.img`
 const Slogan = styled.p`
   font-family: 'IBM Plex Mono', monospace;
   color: var(--color-primary);
+
+  @media only screen and (max-width: 720px) {
+    display: none;
+  }
 `
 
 const Nav = styled.nav`
@@ -78,6 +84,10 @@ const Nav = styled.nav`
       margin-right: 32px;
     }
   }
+
+  @media only screen and (max-width: 720px) {
+    display: none;
+  }
 `
 
 const ThemeToggle = styled.div`
@@ -87,6 +97,15 @@ const ThemeToggle = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+`
+
+const BurgerStyled = styled(Burger)`
+  display: none;
+  margin-right: 16px;
+
+  @media only screen and (max-width: 720px) {
+    display: inline-block;
+  }
 `
 
 export default Header
