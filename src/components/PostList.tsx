@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Column from './Column'
 import PostListItem, { IPostListItem } from './PostListItem'
 
 const tempPosts: IPostListItem[] = [
@@ -22,26 +23,16 @@ const tempPosts: IPostListItem[] = [
 
 const PostList = () => {
   return (
-    <PostListWrapper>
+    <Column>
       <h2>Recently published</h2>
       <div>
         {tempPosts.map(({ title, excerpt }, index) => (
           <PostListItemStyled key={index} title={title} excerpt={excerpt} />
         ))}
       </div>
-    </PostListWrapper>
+    </Column>
   )
 }
-
-const PostListWrapper = styled.div`
-  @media only screen and (max-width: 1100px) {
-    padding: 32px 64px;
-  }
-
-  @media only screen and (max-width: 720px) {
-    padding: 32px;
-  }
-`
 
 const PostListItemStyled = styled(PostListItem)`
   margin: 32px 0;
