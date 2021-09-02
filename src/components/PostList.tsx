@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import Main from './Main'
 import PostListItem, { IPostListItem } from './PostListItem'
 
 const tempPosts: IPostListItem[] = [
