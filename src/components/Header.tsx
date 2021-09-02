@@ -101,7 +101,7 @@ const ThemeToggle = styled.div`
 
 const BurgerStyled = styled(Burger)`
   display: none;
-  margin-right: 16px;
+  margin-right: 8px;
 
   @media only screen and (max-width: 720px) {
     display: inline-block;
