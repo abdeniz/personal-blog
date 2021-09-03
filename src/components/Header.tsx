@@ -8,6 +8,7 @@ import { useContext } from 'react'
 import ThemeContext from './ThemeContext'
 import Chevron from './icons/Chevron'
 import Burger from './icons/Burger'
+import { setThemeLocalStorage } from './utils/themeLocalStorage'
 
 const Header = () => {
   const { setDarkTheme, darkTheme } = useContext(ThemeContext)
@@ -17,8 +18,6 @@ const Header = () => {
       <LeftWrapper>
         <Logo src={darkTheme ? logoWhite : logoDark} alt='logo' />
         <Slogan>{'|  dev blog & stuff'}</Slogan>
-      </LeftWrapper>
-      <RightWrapper>
         <Nav>
           <ul>
             <li>Latest</li>
@@ -27,8 +26,15 @@ const Header = () => {
             </li>
           </ul>
         </Nav>
+      </LeftWrapper>
+      <RightWrapper>
         <BurgerStyled fill={'var(--color-paragraph)'} />
-        <ThemeToggle onClick={() => setDarkTheme(!darkTheme)}>
+        <ThemeToggle
+          onClick={() => {
+            setDarkTheme(!darkTheme)
+            setThemeLocalStorage(!darkTheme)
+          }}
+        >
           <img alt='theme_toggle' src={darkTheme ? moon : sun} />
         </ThemeToggle>
       </RightWrapper>
@@ -49,7 +55,7 @@ const HeaderWrapper = styled.div`
   }
 
   @media only screen and (max-width: 720px) {
-    padding: 32px;
+    padding: 24px;
   }
 `
 
@@ -64,14 +70,15 @@ const RightWrapper = styled.div`
 `
 
 const Logo = styled.img`
-  margin-right: 16px;
+  margin-right: 18px;
 `
 
 const Slogan = styled.p`
   font-family: 'IBM Plex Mono', monospace;
   color: var(--color-primary);
+  margin-right: 32px;
 
-  @media only screen and (max-width: 720px) {
+  @media only screen and (max-width: 460px) {
     display: none;
   }
 `
@@ -97,6 +104,15 @@ const ThemeToggle = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+
+  @media only screen and (max-width: 720px) {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    background-color: var(--color-paragraph);
+    border-radius: 50%;
+    padding: 24px;
+  }
 `
 
 const BurgerStyled = styled(Burger)`

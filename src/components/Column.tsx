@@ -6,7 +6,7 @@ const Column = styled.div`
   }
 
   @media only screen and (max-width: 720px) {
-    padding: 32px;
+    padding: 24px;
   }
 `
 

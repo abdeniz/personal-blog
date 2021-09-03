@@ -8,9 +8,10 @@ import './css/App.css'
 import PostList from './components/PostList'
 import Main from './components/Main'
 import ProjectList from './components/ProjectList'
+import { getThemeLocalStorage } from './components/utils/themeLocalStorage'
 
 const App = () => {
-  const [darkTheme, setDarkTheme] = useState(true)
+  const [darkTheme, setDarkTheme] = useState(getThemeLocalStorage())
   const themeValue = { darkTheme, setDarkTheme }
 
   useEffect(() => {

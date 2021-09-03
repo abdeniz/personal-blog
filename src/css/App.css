@@ -1,6 +1,8 @@
 :root {
   --color-primary: #3591ff;
   --color-secondary: #ff4473;
+
+  --screen-mobile: 768px;
 }
 
 * {
