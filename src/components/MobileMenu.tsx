@@ -92,36 +92,38 @@ const Nav = styled.nav<{ open?: boolean }>`
       :nth-of-type(4),
       :nth-of-type(5) {
         margin-left: 16px;
+        font-size: 20px;
+        transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
       }
 
       &:nth-of-type(1) {
         transform: ${({ open }) =>
           open ? 'translateX(0)' : 'translateX(-100%)'};
-        transition: 0.2s;
+        transition: 0.5s;
       }
 
       &:nth-of-type(2) {
         transform: ${({ open }) =>
           open ? 'translateX(0)' : 'translateX(-100%)'};
-        transition: 0.3s;
+        transition: 0.6s;
       }
 
       &:nth-of-type(3) {
         transform: ${({ open }) =>
           open ? 'translateX(0)' : 'translateX(-100%)'};
-        transition: 0.4s;
+        transition: 0.7s;
       }
 
       &:nth-of-type(4) {
         transform: ${({ open }) =>
           open ? 'translateX(0)' : 'translateX(-100%)'};
-        transition: 0.5s;
+        transition: 0.8s;
       }
 
       &:nth-of-type(5) {
         transform: ${({ open }) =>
           open ? 'translateX(0)' : 'translateX(-100%)'};
-        transition: 0.6s;
+        transition: 1s;
       }
     }
   }
