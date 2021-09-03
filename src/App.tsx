@@ -9,10 +9,15 @@ import PostList from './components/PostList'
 import Main from './components/Main'
 import ProjectList from './components/ProjectList'
 import { getThemeLocalStorage } from './components/utils/themeLocalStorage'
+import MobileMenu from './components/MobileMenu'
 
 const App = () => {
   const [darkTheme, setDarkTheme] = useState(getThemeLocalStorage())
   const themeValue = { darkTheme, setDarkTheme }
+
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  console.log(mobileMenuOpen)
 
   useEffect(() => {
     Prism.highlightAll()
@@ -22,7 +27,13 @@ const App = () => {
     <ThemeContext.Provider value={themeValue}>
       {darkTheme ? <DarkTheme /> : <LightTheme />}
 
-      <Header />
+      <Header setMobileMenuOpen={setMobileMenuOpen} />
+
+      <MobileMenu
+        setMobileMenuOpen={setMobileMenuOpen}
+        mobileMenuOpen={mobileMenuOpen}
+      />
+
       <Main>
         <Fragment>
           <PostList />

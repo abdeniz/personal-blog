@@ -10,7 +10,11 @@ import Chevron from './icons/Chevron'
 import Burger from './icons/Burger'
 import { setThemeLocalStorage } from './utils/themeLocalStorage'
 
-const Header = () => {
+interface IHeader {
+  setMobileMenuOpen: (open: boolean) => void
+}
+
+const Header = ({ setMobileMenuOpen }: IHeader) => {
   const { setDarkTheme, darkTheme } = useContext(ThemeContext)
 
   return (
@@ -28,7 +32,13 @@ const Header = () => {
         </Nav>
       </LeftWrapper>
       <RightWrapper>
-        <BurgerStyled fill={'var(--color-paragraph)'} />
+        <div
+          onClick={() => {
+            setMobileMenuOpen(true)
+          }}
+        >
+          <BurgerStyled fill={'var(--color-paragraph)'} />
+        </div>
         <ThemeToggle
           onClick={() => {
             setDarkTheme(!darkTheme)
@@ -117,7 +127,6 @@ const ThemeToggle = styled.div`
 
 const BurgerStyled = styled(Burger)`
   display: none;
-  margin-right: 8px;
 
   @media only screen and (max-width: 720px) {
     display: inline-block;

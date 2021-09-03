@@ -16,8 +16,8 @@ const ProjectListItem = ({ title, tags }: IProjectListItem) => {
         <ProjectTitle>{title}</ProjectTitle>
       </TitleWrapper>
       <TagWrapper>
-        {tags.map((tag) => (
-          <Tag>{tag}</Tag>
+        {tags.map((tag, index) => (
+          <Tag key={index}>{tag}</Tag>
         ))}
       </TagWrapper>
     </Project>
