@@ -1,1 +1,2 @@
-# Personal dev blog made with react and gatsby
+### Personal dev blog 
+Made with Gatsby 
