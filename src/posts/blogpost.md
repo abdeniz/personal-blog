@@ -7,14 +7,19 @@ date: 1631377105
 img: ../images/post_images/image.jpg
 ---
 
-# This is an h1 Header
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id tempor dui. Fusce gravida, nisl non lacinia sodales, quam orci maximus sapien, id gravida diam turpis sit amet tellus.
+Curabitur sit amet egestas risus. Aenean blandit, justo ut vulputate egestas, odio erat egestas tellus, quis commodo nisl magna nec enim.
 
-## This is an h2 header
+#### Vulpatute egestas
 
-### This is an h3 Header
+Quisque volutpat mi ac turpis hendrerit accumsan. Cras at felis odio. Ut blandit turpis et libero tincidunt iaculis. Etiam viverra diam ipsum, `inline code` ut vehicula augue pellentesque sit amet.
 
-#### This is an h4 Header
+```jsx
+const Component = () => {
+  return <div>This is a React Function Component</div>
+}
 
-##### This is an h5 Header
+// This is a comment
+```
 
-Some paragraph text here
+Curabitur viverra, libero at feugiat euismod, nibh erat blandit lorem, sit amet vulputate lectus ipsum non nisi. Aliquam tincidunt vel enim sit amet rhoncus. Fusce bibendum, purus ac mollis ornare, elit diam molestie purus, at dapibus magna arcu vel lorem. Cras luctus dignissim lorem, non semper massa condimentum quis. Integer at orci ut sapien viverra maximus.

@@ -10,10 +10,12 @@
 /*********************************************************
 * General
 */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');
+
 pre[class*='language-'],
 code[class*='language-'] {
   color: var(--color-text);
-  font-size: 14px;
+  font-size: 16px;
   text-shadow: none;
   font-family: 'IBM Plex Mono', monospace;
   direction: ltr;
@@ -46,16 +48,16 @@ code[class*='language-']::mozselection {
   }
 }
 pre[class*='language-'] {
-  padding: 8px;
+  padding: 24px 32px;
   margin: 0.5em 0;
   overflow: auto;
-  background: #112235;
+  background: var(--color-code-background);
 }
 :not(pre) > code[class*='language-'] {
   padding: 2px 4px;
   border-radius: 0.3em;
   color: #3591ff;
-  background: #112235;
+  background: var(--color-code-background);
 }
 /*********************************************************
 * Tokens
@@ -67,10 +69,10 @@ pre[class*='language-'] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #23436a;
+  color: var(--color-comment);
 }
 .token.punctuation {
-  color: #fafeff;
+  color: #3591ff;
 }
 .token.property,
 .token.tag,
@@ -94,7 +96,7 @@ pre[class*='language-'] {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  color: #fafeff;
+  color: var(--color-text);
   background: transparent;
 }
 .token.atrule,

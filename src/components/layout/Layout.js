@@ -28,6 +28,8 @@ const LightTheme = createGlobalStyle`
     --color-background: #fafeff;
     --color-tag-background: #3591ff;
     --color-tag-text: #fafeff;
+    --color-code-background: #ECECED;
+    --color-comment: #d2d2d2;
   }
   .icon-color {
     fill: #23436A;
@@ -40,6 +42,8 @@ const DarkTheme = createGlobalStyle`
     --color-background: #0D1B2C;
     --color-tag-background: #23436A;
     --color-tag-text: #3591ff;
+    --color-code-background: #112235;
+    --color-comment: #23436A;
   }
   .icon-color {
     fill: #fafeff;
