@@ -12,7 +12,7 @@ const PostTemplate = ({ data }) => {
     <Layout>
       <PostMain>
         <Column>
-          <h1>{post.fullTitle}</h1>
+          <PostTitle>{post.fullTitle}</PostTitle>
           <Markdown
             dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
           />

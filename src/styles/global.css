@@ -31,6 +31,7 @@ h1 {
   font-size: 32px;
   text-transform: capitalize;
   font-weight: 500;
+  line-height: 125%;
 }
 
 h2 {

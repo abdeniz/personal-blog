@@ -2,10 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { getThemeLocalStorage, ThemeContext } from '../../utils'
 import { createGlobalStyle } from 'styled-components'
 import Header from './Header'
+import MobileMenu from './MobileMenu'
 
 const Layout = ({ children }) => {
   const [darkTheme, setDarkTheme] = useState()
   const themeValue = { darkTheme, setDarkTheme }
+
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     setDarkTheme(getThemeLocalStorage())
@@ -15,7 +18,11 @@ const Layout = ({ children }) => {
     <div>
       <ThemeContext.Provider value={themeValue}>
         {darkTheme ? <DarkTheme /> : <LightTheme />}
-        <Header />
+        <MobileMenu
+          setMobileMenuOpen={setMobileMenuOpen}
+          mobileMenuOpen={mobileMenuOpen}
+        />
+        <Header setMobileMenuOpen={setMobileMenuOpen} />
         {children}
       </ThemeContext.Provider>
     </div>

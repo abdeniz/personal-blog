@@ -113,6 +113,8 @@ const ThemeToggle = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  z-index: 2;
+
   @media only screen and (max-width: 720px) {
     position: fixed;
     bottom: 32px;
