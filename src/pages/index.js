@@ -1,16 +1,40 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Post from '../components/Post'
+import Project from '../components/Project'
+import styled from 'styled-components'
+import Main from '../components/layout/Main'
+import Column from '../components/layout/Column'
+import projects from '../projects'
 
-const Home = ({ data }) => {
+// CSS
+import '../styles/reset.css'
+import '../styles/global.css'
+import '../styles/deniz-prism-theme.css'
+import Layout from '../components/layout/Layout'
+
+export default function Home({ data }) {
   const posts = data.allMarkdownRemark.nodes
 
-  return posts.map(({ frontmatter: post }, index) => {
-    return <Post post={post} key={index} />
-  })
+  return (
+    <Layout>
+      <Main>
+        <Column>
+          <SectionHeader>Recently published</SectionHeader>
+          {posts.map(({ frontmatter: post }, index) => {
+            return <Post post={post} key={index} />
+          })}
+        </Column>
+        <Column>
+          <SectionHeader>Projects</SectionHeader>
+          {projects.map((project, index) => {
+            return <Project project={project} key={index} />
+          })}
+        </Column>
+      </Main>
+    </Layout>
+  )
 }
-
-export default Home
 
 export const query = graphql`
   query {
@@ -19,7 +43,6 @@ export const query = graphql`
         frontmatter {
           date
           desc
-          fullTitle
           slug
           title
           img {
@@ -32,4 +55,8 @@ export const query = graphql`
       }
     }
   }
+`
+
+const SectionHeader = styled.h2`
+  margin-bottom: 32px;
 `
