@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 const MobileMenu = ({ setMobileMenuOpen, mobileMenuOpen }) => {
   return (
@@ -9,11 +10,21 @@ const MobileMenu = ({ setMobileMenuOpen, mobileMenuOpen }) => {
         <CloseButton onClick={() => setMobileMenuOpen(false)}>✕</CloseButton>
         <Nav open={mobileMenuOpen}>
           <ul>
-            <li>Latest</li>
-            <li>Categories</li>
-            <li>CSS</li>
-            <li>Javascript</li>
-            <li>React</li>
+            <Link to='/latest'>
+              <li>Latest</li>
+            </Link>
+            <Link to='/categories'>
+              <li>Categories</li>
+            </Link>
+            <Link to='/categories/css'>
+              <li>Css</li>
+            </Link>
+            <Link to='/categories/javascript'>
+              <li>Javascript</li>
+            </Link>
+            <Link to='/categories/react'>
+              <li>React</li>
+            </Link>
           </ul>
         </Nav>
       </MobileMenuContent>
@@ -73,7 +84,7 @@ const Nav = styled.nav`
   & ul {
     display: flex;
     flex-direction: column;
-    & li {
+    & a {
       margin-right: 32px;
       font-size: 28px;
       padding: 8px 0;

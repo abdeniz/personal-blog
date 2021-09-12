@@ -8,6 +8,7 @@ const Tag = styled.p`
   margin-right: 4px;
   font-size: 14px;
   text-transform: uppercase;
+  display: inline-block;
 `
 
 export default Tag

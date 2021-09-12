@@ -29,10 +29,18 @@ const Header = ({ setMobileMenuOpen }) => {
         <Slogan>{'|  dev blog & stuff'}</Slogan>
         <Nav>
           <ul>
-            <li>Latest</li>
-            <li>
-              Categories <Chevron fill={'var(--color-paragraph)'} />
-            </li>
+            <Link to={'/latest'}>
+              <li>Latest</li>
+            </Link>
+            <Categories>
+              <Link to='/categories'>Categories</Link>{' '}
+              <Chevron fill={'var(--color-paragraph)'} />
+              <div>
+                <Link to='/categories/react'>React</Link>
+                <Link to='/categories/javascript'>Javascript</Link>
+                <Link to='/categories/css'>CSS</Link>
+              </div>
+            </Categories>
           </ul>
         </Nav>
       </LeftWrapper>
@@ -97,12 +105,76 @@ const Slogan = styled.p`
 const Nav = styled.nav`
   & ul {
     display: flex;
+    align-items: center;
     & li {
       margin-right: 32px;
+
+      &:hover {
+        color: var(--color-tag-background);
+      }
     }
   }
   @media only screen and (max-width: 720px) {
     display: none;
+  }
+`
+
+const Categories = styled.li`
+  position: relative;
+
+  & > div {
+    position: absolute;
+    top: 125%;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+
+    background-color: var(--color-tag-background);
+    opacity: 0;
+
+    transition: all 0.2s;
+    border-radius: 4px;
+
+    &:before {
+      content: '';
+      border-style: solid;
+      border-width: 10px 15px 10px 0;
+      transform: rotate(90deg);
+      border-color: transparent var(--color-tag-background) transparent
+        transparent;
+      position: absolute;
+      top: -15px;
+      left: 80%;
+    }
+
+    & > a {
+      padding: 8px;
+      color: var(--color-tag-text);
+      transition: color 0.2s;
+
+      &:hover {
+        color: var(--color-paragraph);
+      }
+    }
+  }
+
+  & > svg {
+    transition: transform 0.2s;
+  }
+
+  &:hover > div {
+    opacity: 1;
+    top: 175%;
+  }
+
+  &:hover > svg {
+    transform: rotate(180deg);
+  }
+
+  & > div:hover ~ svg {
+    transform: rotate(180deg);
   }
 `
 

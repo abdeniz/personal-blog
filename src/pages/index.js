@@ -12,12 +12,14 @@ import '../styles/reset.css'
 import '../styles/global.css'
 import '../styles/deniz-prism-theme.css'
 import Layout from '../components/layout/Layout'
+import Seo from '../components/Seo'
 
 export default function Home({ data }) {
   const posts = data.allMarkdownRemark.nodes
 
   return (
     <Layout>
+      <Seo title='Home' />
       <Main>
         <Column>
           <SectionHeader>Recently published</SectionHeader>
@@ -38,20 +40,17 @@ export default function Home({ data }) {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: frontmatter___date, order: DESC }
+      limit: 5
+    ) {
       nodes {
         frontmatter {
           date
           desc
           slug
           title
-          img {
-            childrenImageSharp {
-              gatsbyImageData(placeholder: BLURRED)
-            }
-          }
         }
-        html
       }
     }
   }

@@ -1,10 +1,10 @@
 ---
-title: A blog post
-fullTitle: A blog post with a long title
+title: The second blog post
+fullTitle: A blog post with a longer title
 desc: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id tempor dui. Fusce gravida, nisl non lacinia sodales, quam orci maximus sapien, id gravida diam turpis sit amet tellus. Curabitur sit amet egestas risus.
-slug: blogpost
-date: 1631377105
-tags: ['React', 'GraphQL', 'GatsbyJS']
+slug: blogpost-2
+date: 1631464534
+tags: ['React', 'GraphQL']
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id tempor dui. Fusce gravida, nisl non lacinia sodales, quam orci maximus sapien, id gravida diam turpis sit amet tellus.

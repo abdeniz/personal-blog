@@ -4,13 +4,17 @@ import Link from './Link'
 
 const Post = ({ post }) => {
   return (
-    <div>
+    <PostWrapper>
       <PostTitle>{post.title}</PostTitle>
       <PostExcerpt>{post.desc}</PostExcerpt>
       <Link to={'/' + post.slug}>{'> Read more'}</Link>
-    </div>
+    </PostWrapper>
   )
 }
+
+const PostWrapper = styled.div`
+  margin-bottom: 32px;
+`
 
 const PostTitle = styled.h3`
   margin-bottom: 16px;

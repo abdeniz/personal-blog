@@ -5,6 +5,12 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: 'deniz',
+    titleTemplate: '%s · deniz',
+    description: 'Personal dev blog by deniz',
+    url: 'https://deniz.tech', // No trailing slash allowed!
+  },
   /* Your site config here */
   plugins: [
     `gatsby-plugin-styled-components`,
