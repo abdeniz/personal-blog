@@ -19,6 +19,8 @@ body {
   color: var(--color-paragraph);
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
+  position: relative;
+  min-height: 100vh;
 }
 
 li {

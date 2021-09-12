@@ -1,25 +1,18 @@
 ---
-title: A blog post
-fullTitle: A blog post with a long title
-desc: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id tempor dui. Fusce gravida, nisl non lacinia sodales, quam orci maximus sapien, id gravida diam turpis sit amet tellus. Curabitur sit amet egestas risus.
-slug: blogpost
-date: 1631377105
-tags: ['React', 'GraphQL', 'GatsbyJS']
+title: React functional components
+fullTitle: Creating React function components
+desc: React functional components or React function components are an easy and practical way to create components in React.
+slug: react-functional-components
+date: 1631469550
+tags: ['React', 'Javascript']
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id tempor dui. Fusce gravida, nisl non lacinia sodales, quam orci maximus sapien, id gravida diam turpis sit amet tellus.
-Curabitur sit amet egestas risus. Aenean blandit, justo ut vulputate egestas, odio erat egestas tellus, quis commodo nisl magna nec enim.
+#### Creating the component
 
-#### Vulpatute egestas
-
-Quisque volutpat mi ac turpis hendrerit accumsan. Cras at felis odio. Ut blandit turpis et libero tincidunt iaculis. Etiam viverra diam ipsum, `inline code` ut vehicula augue pellentesque sit amet.
+To create a functional React component we first need to declare it. I prefer using arrow functions for declaring the components but you can use regular functions too.
 
 ```jsx
 const Component = () => {
   return <div>This is a React Function Component</div>
 }
-
-// This is a comment
 ```
-
-Curabitur viverra, libero at feugiat euismod, nibh erat blandit lorem, sit amet vulputate lectus ipsum non nisi. Aliquam tincidunt vel enim sit amet rhoncus. Fusce bibendum, purus ac mollis ornare, elit diam molestie purus, at dapibus magna arcu vel lorem. Cras luctus dignissim lorem, non semper massa condimentum quis. Integer at orci ut sapien viverra maximus.
