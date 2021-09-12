@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { getThemeLocalStorage, ThemeContext } from '../../utils'
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import Header from './Header'
 import MobileMenu from './MobileMenu'
+import Footer from './Footer'
 
 const Layout = ({ children }) => {
   const [darkTheme, setDarkTheme] = useState()
@@ -15,7 +16,7 @@ const Layout = ({ children }) => {
   }, [])
 
   return (
-    <div>
+    <LayoutWrapper>
       <ThemeContext.Provider value={themeValue}>
         {darkTheme ? <DarkTheme /> : <LightTheme />}
         <MobileMenu
@@ -24,10 +25,15 @@ const Layout = ({ children }) => {
         />
         <Header setMobileMenuOpen={setMobileMenuOpen} />
         {children}
+        <Footer />
       </ThemeContext.Provider>
-    </div>
+    </LayoutWrapper>
   )
 }
+
+const LayoutWrapper = styled.div`
+  min-height: 100vh;
+`
 
 const LightTheme = createGlobalStyle`
   :root {

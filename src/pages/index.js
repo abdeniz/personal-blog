@@ -6,13 +6,13 @@ import styled from 'styled-components'
 import Main from '../components/layout/Main'
 import Column from '../components/layout/Column'
 import projects from '../projects'
+import Layout from '../components/layout/Layout'
+import Seo from '../components/Seo'
 
 // CSS
 import '../styles/reset.css'
 import '../styles/global.css'
 import '../styles/deniz-prism-theme.css'
-import Layout from '../components/layout/Layout'
-import Seo from '../components/Seo'
 
 export default function Home({ data }) {
   const posts = data.allMarkdownRemark.nodes

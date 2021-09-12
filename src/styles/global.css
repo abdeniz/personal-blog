@@ -58,3 +58,7 @@ p {
   line-height: 24px;
   font-weight: 400;
 }
+
+a {
+  display: block;
+}
